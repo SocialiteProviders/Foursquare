@@ -12,7 +12,9 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getAuthUrl($state)
     {
-        return $this->buildAuthUrlFromBase('https://foursquare.com/oauth2/authenticate', $state);
+        return $this->buildAuthUrlFromBase(
+            'https://foursquare.com/oauth2/authenticate', $state
+        );
     }
 
     /**
@@ -28,7 +30,9 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getUserByToken($token)
     {
-        $response = $this->getHttpClient()->get('https://api.foursquare.com/v2/users/self?oauth_token='.$token.'&v=20150214');
+        $response = $this->getHttpClient()->get(
+            'https://api.foursquare.com/v2/users/self?oauth_token='.$token.'&v=20150214'
+        );
 
         return json_decode($response->getBody(), true)['response']['user'];
     }
@@ -39,11 +43,10 @@ class Provider extends AbstractProvider implements ProviderInterface
     protected function mapUserToObject(array $user)
     {
         return (new User())->setRaw($user)->map([
-            'id'       => $user['id'],
-            'nickname' => null,
-            'name'     => $user['firstName'].' '.$user['lastName'],
-            'email'    => $user['contact']['email'],
-            'avatar'   => $user['photo']['prefix'].$user['photo']['suffix'],
+            'id' => $user['id'], 'nickname' => null,
+            'name' => $user['firstName'].' '.$user['lastName'],
+            'email' => $user['contact']['email'],
+            'avatar' => $user['photo']['prefix'].$user['photo']['suffix'],
         ]);
     }
 
@@ -52,6 +55,8 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function getTokenFields($code)
     {
-        return array_merge(parent::getTokenFields($code), ['grant_type' => 'authorization_code']);
+        return array_merge(parent::getTokenFields($code), [
+            'grant_type' => 'authorization_code',
+        ]);
     }
 }
