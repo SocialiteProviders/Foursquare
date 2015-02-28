@@ -1,5 +1,11 @@
 # Foursquare OAuth2 Provider for Laravel Socialite
 
+[![Scrutinizer Code Quality](https://img.shields.io/scrutinizer/g/SocialiteProviders/Foursquare.svg?style=flat-square)](https://scrutinizer-ci.com/g/SocialiteProviders/Foursquare/?branch=master)
+[![Latest Stable Version](https://img.shields.io/packagist/v/socialiteproviders/foursquare.svg?style=flat-square)](https://packagist.org/packages/socialiteproviders/foursquare)
+[![Total Downloads](https://img.shields.io/packagist/dt/socialiteproviders/foursquare.svg?style=flat-square)](https://packagist.org/packages/socialiteproviders/foursquare)
+[![Latest Unstable Version](https://img.shields.io/packagist/vpre/socialiteproviders/foursquare.svg?style=flat-square)](https://packagist.org/packages/socialiteproviders/foursquare)
+[![License](https://img.shields.io/packagist/l/socialiteproviders/foursquare.svg?style=flat-square)](https://packagist.org/packages/socialiteproviders/foursquare)
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 ## Contents
