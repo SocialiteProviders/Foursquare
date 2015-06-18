@@ -1,4 +1,5 @@
 <?php
+
 namespace SocialiteProviders\Foursquare;
 
 use Laravel\Socialite\Two\AbstractProvider;
@@ -34,7 +35,7 @@ class Provider extends AbstractProvider implements ProviderInterface
             'https://api.foursquare.com/v2/users/self?oauth_token='.$token.'&v=20150214'
         );
 
-        return json_decode($response->getBody(), true)['response']['user'];
+        return json_decode($response->getBody()->getContents(), true)['response']['user'];
     }
 
     /**

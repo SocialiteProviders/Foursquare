@@ -1,4 +1,5 @@
 <?php
+
 namespace SocialiteProviders\Foursquare;
 
 use SocialiteProviders\Manager\SocialiteWasCalled;
