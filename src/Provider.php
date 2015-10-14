@@ -43,9 +43,13 @@ class Provider extends AbstractProvider implements ProviderInterface
      */
     protected function mapUserToObject(array $user)
     {
+        // Check and get names if they exist
+        $firstName = isset($user['firstName']) ? $user['firstName'] : null;
+        $lastName = isset($user['lastName']) ? $user['lastName'] : null;
+
         return (new User())->setRaw($user)->map([
             'id' => $user['id'], 'nickname' => null,
-            'name' => $user['firstName'].' '.$user['lastName'],
+            'name' => $firstName.' '.$lastName,
             'email' => $user['contact']['email'],
             'avatar' => $user['photo']['prefix'].$user['photo']['suffix'],
         ]);
